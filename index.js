@@ -11,6 +11,7 @@ const purestConfig = require('@purest/providers')
 
 const DropboxProvider = function () {
   this.endpoint = 'files/list_folder'
+  this.accessToken = process.env['DROPBOX_ACCESS_TOKEN']
 }
 
 /**
@@ -28,7 +29,7 @@ DropboxProvider.prototype.initialise = function (datasource, schema) {
     provider: 'dropbox',
     config: purestConfig,
     version: 2,
-    auth: 's5As_r8nsiMAAAAAAAAQaN97v7dg8Pe_Ar4h0ZUkPtOEkjXzp_U0FTGHVzVamf2v'
+    auth: this.accessToken
   })
 }
 
@@ -89,7 +90,7 @@ DropboxProvider.prototype.load = function (requestUrl, done) {
 
     this.dropboxApi
       .post(this.endpoint)
-      .auth('s5As_r8nsiMAAAAAAAAQaN97v7dg8Pe_Ar4h0ZUkPtOEkjXzp_U0FTGHVzVamf2v')
+      .auth(this.accessToken)
       .body(queryParams)
       .request()
       .then(result => {
