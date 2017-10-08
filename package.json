@@ -1,0 +1,29 @@
+{
+  "name": "dadi-web-dropbox",
+  "version": "1.0.0",
+  "description": "Dropbox provider for DADI Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dadi",
+    "web",
+    "dadi-web-provider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimlambie/dadi-web-dropbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jimlambie/dadi-web-dropbox/issues"
+  },
+  "homepage": "https://github.com/jimlambie/dadi-web-dropbox",
+  "author": "jameslambie@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@purest/providers": "~1.0.1",
+    "purest": "~3.1.0",
+    "request": "~2.83.0"
+  }
+}
